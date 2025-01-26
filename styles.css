@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2C3333, #395B64);
+    color: #E7F6F2;
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(57, 91, 100, 0.9);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    width: 400px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #A5C9CA;
+}
+
+/* Mode Selection Buttons */
+.mode-selection {
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #A5C9CA;
+    color: #2C3333;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #E7F6F2;
+    transform: scale(1.1);
+}
+
+/* Game Board Styling */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.cell {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #A5C9CA;
+    color: #2C3333;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #395B64;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.cell:hover {
+    background: #E7F6F2;
+    transform: scale(1.05);
+}
+
+.cell.taken {
+    pointer-events: none;
+    background: #395B64;
+    color: #E7F6F2;
+}
+
+.cell.winning {
+    background: #FFD700;
+    box-shadow: 0 0 15px #FFD700, 0 0 30px #FFAA00;
+}
+
+/* Status Message */
+.status {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    padding: 10px;
+    background: #A5C9CA;
+    border-radius: 8px;
+    color: #2C3333;
+}
+
+/* Restart Button */
+button:disabled {
+    background-color: #395B64;
+    color: #A5C9CA;
+    cursor: not-allowed;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #E7F6F2;
+    color: #2C3333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: popupFade 0.3s ease;
+}
+
+@keyframes popupFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
